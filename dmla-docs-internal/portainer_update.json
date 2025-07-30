@@ -1,0 +1,11 @@
+{
+  "env": [
+    {
+      "name": "DOCKER_REGISTRY",
+      "value": "reg2.gembela.hu"
+    }
+  ],
+  "prune": true,
+  "pullImage": true,
+  "stackFileContent": "{services: {dmlainternal: {image: 'reg2.gembela.hu/dmlainternal:latest', restart: always, container_name: dmlainternal_site, ports: ['8644:80']}}}"
+}

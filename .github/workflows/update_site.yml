@@ -1,0 +1,30 @@
+name: Push to reg2.gembela.hu and update stack
+on:
+  push:
+    branches:
+      - "docs"
+jobs:
+  build_and_push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4   
+      - name: Build site
+        run: python -m pip install mkdocs && mkdocs build
+        working-directory: ./dmla-docs-internal
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+      - name: install compose  
+        uses: KengoTODA/actions-setup-docker-compose@v1
+        with:
+          version: '2.32.0' # the full version of `docker-compose` command
+      - name: Build docker image and push
+        working-directory: ./dmla-docs-internal
+        run: docker-compose build && docker-compose push
+      - name: Update Portainer stack (dmlainternal)
+        working-directory: .
+        run: |
+          curl --location --request PUT 'https://portainer.gembela.hu/api/stacks/20?endpointId=2' \
+          --header 'X-API-Key: ${{secrets.PORTAINER_KEY}}' \
+          --header 'Content-Type: application/json' \
+          --data @./portainer_update.json

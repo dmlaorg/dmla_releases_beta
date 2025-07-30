@@ -1,0 +1,17 @@
+{
+  services:
+    {
+      dmlainternal:
+        {
+          image: 'reg2.gembela.hu/dmlainternal:latest',
+          restart: always,
+          build:
+          {
+            context: .,
+            dockerfile: ./Dockerfile,
+          },
+          container_name: dmlainternal_site,
+          ports: ['8644:80'],
+        },     
+    },
+}
