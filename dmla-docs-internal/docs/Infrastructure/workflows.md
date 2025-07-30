@@ -12,7 +12,7 @@ The DMLA installer will pull releases from either the [Beta releases repository]
 ## Versions
 
 Commits made to each release branch that are expected to result in a release **should contain the desired release version number as part of their commit message** (e.g. `commit message (...) 0.0.0`).
-Version numbers are not extracted from the version number specified in the commit message, but this mechanism prevents us from accidentally creating releases during merges/development.
+The version numbers used for the release tags are not extracted from the version number specified in the commit message, but this mechanism prevents us from accidentally creating releases during merges/development (the scripts stop the release workflows if the version numbers in the commit messages do not match the version numbers specified in the project files).
 
 The version numbers are extracted from the following sources:
 
