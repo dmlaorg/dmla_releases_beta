@@ -22,7 +22,7 @@ jobs:
         working-directory: ./dmla-docs-internal
         run: docker-compose build && docker-compose push
       - name: Update Portainer stack (dmlainternal)
-        working-directory: .
+        working-directory: ./dmla-docs-internal
         run: |
           curl --location --request PUT 'https://portainer.gembela.hu/api/stacks/20?endpointId=2' \
           --header 'X-API-Key: ${{secrets.PORTAINER_KEY}}' \
