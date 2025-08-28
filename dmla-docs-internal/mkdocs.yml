@@ -1,5 +1,5 @@
 site_name: DMLA Internal Docs
-markdown_extensions: 
+markdown_extensions:
   - attr_list
   - md_in_html
   - pymdownx.blocks.caption
@@ -7,7 +7,7 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.superfences
 site_url: https://dmlainternal.gembela.hu
-theme: 
+theme:
   name: material
   palette:
     scheme: slate
@@ -15,4 +15,3 @@ theme:
   features:
     - navigation.instant
     - navigation.instant.prefetch
-
