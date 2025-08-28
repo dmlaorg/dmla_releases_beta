@@ -16,9 +16,9 @@ With all dependencies installed, the VS Code debugger functions as expected, and
 The default configuration allocates a random free TCP port, and uses the DMLA Launcher to start the language server. When debugging the LS, you might want to connect to an instance already running (most likely with a debugger attached) using a specific TCP port. To do so, in the VS Code instance running the extension open D# settings, and enable the `Attach To Running Langserver` option, and ensure that the `Langserver Socket Port` item is set to the correct port. The default port the LS will start listening on is `4242`.
 
 <figure markdown>
-  ![VS Code LS debug settings](./GradleSettings.png)
+  ![VS Code LS debug settings](./Code_ext_dbg.png)
   <figcaption>Fig 1: VS Code LS debug settings</figcaption>
 </figure>
 
 
-*An option that instructs the langserver to wait for a remote JVM debugger to be attached is under consideration, as the shipping releases should not expose such functionality.*
+*An option that instructs the langserver to wait for a remote JVM debugger to be attached is under consideration, as the shipped releases should not expose such functionality.*
